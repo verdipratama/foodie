@@ -92,4 +92,6 @@ class Spacers {
   }
 }
 
-class AppTheme {}
+class AppTheme {
+  AppTheme._();
+}

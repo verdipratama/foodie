@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 
 class AppRoute {
+  AppRoute._();
+
   static const String INITIAL_ROUTE = '/';
   static const String HOME_FOODIE = "/home_foodie";
   static const String DETAILS_FOODIE = "/detail_foodie";
