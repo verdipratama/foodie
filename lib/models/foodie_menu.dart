@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:foodie/data/foodie_drink.dart';
+import 'package:foodie/models/foodie_drink.dart';
 
 class Menus {
   Menus({

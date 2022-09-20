@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:foodie/data/foodie_menu.dart';
+import 'package:foodie/models/foodie_menu.dart';
 
 class Welcome {
   Welcome({required this.restaurants});
