@@ -6,21 +6,23 @@ class AppRoute {
   AppRoute._();
 
   static const String INITIAL_ROUTE = '/';
-  static const String HOME_FOODIE = "/home_foodie";
-  static const String DETAILS_FOODIE = "/detail_foodie";
-  static const String FAVORITE_FOODIE = "/favorite_foodie";
-  static const String NOTIFICATION_FOODIE = "/notification_foodie";
-  static const String PROFILE_FOODIE = "/profile_foodie";
+  static const String SPLASH_ROUTE = "/splash";
+  static const String MAIN_ROUTE = "/main-foodie";
+  static const String HOME_RESTAURANT_ROUTE = "/home-foodie";
+  static const String DETAILS_RESTAURANT_ROUTE = "/detail-foodie";
+  static const String FAVORITE_ROUTE = "/favorite-foodie";
+  static const String NOTIFICATION_ROUTE = "/notification-foodie";
+  static const String PROFILE_ROUTE = "/profile-foodie";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    final args = settings.arguments as dynamic;
+    // final args = settings.arguments as dynamic;
 
     switch (settings.name) {
       case INITIAL_ROUTE:
         return _errorRoute();
-      case HOME_FOODIE:
+      case HOME_RESTAURANT_ROUTE:
         return _errorRoute();
-      case DETAILS_FOODIE:
+      case DETAILS_RESTAURANT_ROUTE:
         return _errorRoute();
       default:
         return _errorRoute();

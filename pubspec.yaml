@@ -38,6 +38,9 @@ dependencies:
   carousel_slider: ^4.1.1
   font_awesome_flutter: ^10.2.1
   google_fonts: ^3.0.1
+  easy_splash_screen:
+    git:
+      url: git@github.com:verdipratama/EasySplashScreen.git
 
 dev_dependencies:
   flutter_test:
