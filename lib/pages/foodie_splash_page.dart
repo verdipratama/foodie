@@ -1,6 +1,7 @@
-import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:foodie/pages/foodie_navigation.dart';
+import 'package:easy_splash_screen/easy_splash_screen.dart';
 
 class FoodieSplashPage extends StatelessWidget {
   const FoodieSplashPage({Key? key}) : super(key: key);
@@ -8,18 +9,28 @@ class FoodieSplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EasySplashScreen(
-      title: const Text(
+      title: Text(
         "FOODIE",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 45.0,
+        style: GoogleFonts.righteous(
+          textStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 45.0,
+            fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                color: Colors.orange.withOpacity(0.4),
+                offset: const Offset(4.0, 4.0),
+                blurRadius: 10,
+              ),
+            ],
+          ),
         ),
       ),
       loadingText: const Text(
         "1.3.3.7",
         style: TextStyle(
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 16.0,
         ),
       ),
       showLoader: true,

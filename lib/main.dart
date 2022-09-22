@@ -1,7 +1,16 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:foodie/pages/foodie_splash_page.dart';
 
-void main() => runApp(const Bismillah());
+void main() {
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('google_fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['poppins', 'righteous'], license);
+  });
+
+  runApp(const Bismillah());
+}
 
 class Bismillah extends StatelessWidget {
   const Bismillah({Key? key}) : super(key: key);

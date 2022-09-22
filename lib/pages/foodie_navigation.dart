@@ -3,6 +3,7 @@ import 'package:foodie/pages/foodie_favorite_page.dart';
 import 'package:foodie/pages/foodie_home_page.dart';
 import 'package:foodie/pages/foodie_notif_page.dart';
 import 'package:foodie/pages/foodie_profile_page.dart';
+import 'package:foodie/widgets/custom_navbar.dart';
 
 class FoodieNavigation extends StatefulWidget {
   const FoodieNavigation({Key? key}) : super(key: key);
@@ -12,13 +13,33 @@ class FoodieNavigation extends StatefulWidget {
 }
 
 class _FoodieNavigationState extends State<FoodieNavigation> {
-  int _selectedIndex = 0;
+  final List<Widget> _screens = const [
+    FoodieHomePage(),
+    FoodieFavoritePage(),
+    FoodieNotificationPage(),
+    FoodieProfilePage(),
+  ];
 
-  void _onSelectedTab(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final List _items = [
+    {
+      "icon": const Icon(Icons.home),
+      "label": "Home",
+    },
+    {
+      "icon": const Icon(Icons.favorite),
+      "label": "Favorite",
+    },
+    {
+      "icon": const Icon(Icons.notifications_sharp),
+      "label": "Notifikasi",
+    },
+    {
+      "icon": const Icon(Icons.account_circle_rounded),
+      "label": "Saya",
+    }
+  ];
+
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,61 +54,17 @@ class _FoodieNavigationState extends State<FoodieNavigation> {
       ),
       body: IndexedStack(
         index: _selectedIndex,
-        children: const [
-          FoodieHomePage(),
-          FoodieFavoritePage(),
-          FoodieNotificationPage(),
-          FoodieProfilePage(),
-        ],
+        children: _screens,
       ),
-      bottomNavigationBar: _getNavbar(),
-    );
-  }
-
-  BottomNavigationBar _getNavbar() {
-    return BottomNavigationBar(
-      currentIndex: _selectedIndex,
-      onTap: _onSelectedTab,
-      iconSize: 26,
-      selectedFontSize: 11,
-      unselectedFontSize: 11,
-      selectedLabelStyle: const TextStyle(
-        fontWeight: FontWeight.w500,
+      bottomNavigationBar: CustomNavbar(
+        selectedIndex: _selectedIndex,
+        func: (value) {
+          setState(() {
+            _selectedIndex = value;
+          });
+        },
+        items: _items,
       ),
-      selectedItemColor: Colors.orange,
-      unselectedItemColor: Colors.grey,
-      backgroundColor: Colors.black,
-      type: BottomNavigationBarType.fixed,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.0),
-            child: Icon(Icons.home),
-          ),
-          label: "Beranda",
-        ),
-        BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.0),
-            child: Icon(Icons.favorite),
-          ),
-          label: "Favorited",
-        ),
-        BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.0),
-            child: Icon(Icons.notifications_sharp),
-          ),
-          label: "Notifikasi",
-        ),
-        BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.0),
-            child: Icon(Icons.account_circle_rounded),
-          ),
-          label: "Saya",
-        ),
-      ],
     );
   }
 }
