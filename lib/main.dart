@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie/pages/foodie_navigation.dart';
+import 'package:foodie/modules/layouts/foodie_main_layout.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -23,7 +23,7 @@ class Bismillah extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: const FoodieNavigation(),
+      home: const FoodieMainLayouts(),
     );
   }
 }

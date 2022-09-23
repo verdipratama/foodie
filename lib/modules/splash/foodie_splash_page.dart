@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:foodie/pages/foodie_navigation.dart';
+import 'package:foodie/modules/layouts/foodie_main_layout.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 
 class FoodieSplashPage extends StatelessWidget {
@@ -34,7 +34,7 @@ class FoodieSplashPage extends StatelessWidget {
         ),
       ),
       showLoader: true,
-      navigator: const FoodieNavigation(),
+      navigator: const FoodieMainLayouts(),
       backgroundColor: Colors.black,
     );
   }

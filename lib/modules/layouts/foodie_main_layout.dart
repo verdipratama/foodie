@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/pages/foodie_favorite_page.dart';
-import 'package:foodie/pages/foodie_home_page.dart';
-import 'package:foodie/pages/foodie_notif_page.dart';
-import 'package:foodie/pages/foodie_profile_page.dart';
+import 'package:foodie/modules/favorite/foodie_favorite_page.dart';
+import 'package:foodie/modules/home/foodie_home_page.dart';
+import 'package:foodie/modules/notification/foodie_notif_page.dart';
+import 'package:foodie/modules/profile/foodie_profile_page.dart';
 import 'package:foodie/widgets/custom_navbar.dart';
 
-class FoodieNavigation extends StatefulWidget {
-  const FoodieNavigation({Key? key}) : super(key: key);
+class FoodieMainLayouts extends StatefulWidget {
+  const FoodieMainLayouts({Key? key}) : super(key: key);
 
   @override
-  State<FoodieNavigation> createState() => _FoodieNavigationState();
+  State<FoodieMainLayouts> createState() => _FoodieMainLayoutsState();
 }
 
-class _FoodieNavigationState extends State<FoodieNavigation> {
+class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
   final List<Widget> _screens = const [
     FoodieHomePage(),
     FoodieFavoritePage(),
