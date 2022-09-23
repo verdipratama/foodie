@@ -51,15 +51,17 @@ class Restaurant {
 
   String toRawJson() => json.encode(toJson());
 
-  factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
-        pictureId: json["pictureId"],
-        city: json["city"],
-        rating: json["rating"].toDouble(),
-        menus: Menus.fromJson(json["menus"]),
-      );
+  factory Restaurant.fromJson(Map<String, dynamic> json) {
+    return Restaurant(
+      id: json["id"],
+      name: json["name"],
+      description: json["description"],
+      pictureId: json["pictureId"],
+      city: json["city"],
+      rating: json["rating"].toDouble(),
+      menus: Menus.fromJson(json["menus"]),
+    );
+  }
 
   Map<String, dynamic> toJson() {
     return {

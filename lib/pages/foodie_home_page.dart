@@ -5,11 +5,10 @@ class FoodieHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
+    return const SafeArea(
+      child: Center(
         child: Text(
-          'Foodie Home Page',
+          'Foodie Homepage Page',
           style: TextStyle(
             color: Colors.white,
             fontSize: 22.0,

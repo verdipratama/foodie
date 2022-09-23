@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie/pages/foodie_splash_page.dart';
+import 'package:foodie/pages/foodie_navigation.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {
@@ -20,8 +20,10 @@ class Bismillah extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Foodie: Restaurant App',
-      theme: ThemeData.light(),
-      home: const FoodieSplashPage(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
+      ),
+      home: const FoodieNavigation(),
     );
   }
 }
