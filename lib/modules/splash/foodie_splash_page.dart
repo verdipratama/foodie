@@ -8,34 +8,34 @@ class FoodieSplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EasySplashScreen(
-      title: Text(
-        "FOODIE",
-        style: GoogleFonts.righteous(
-          textStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 45.0,
-            fontWeight: FontWeight.bold,
-            shadows: [
-              Shadow(
-                color: Colors.orange.withOpacity(0.4),
-                offset: const Offset(4.0, 4.0),
-                blurRadius: 10,
-              ),
-            ],
+    return Scaffold(
+      body: EasySplashScreen(
+        title: Text(
+          "FOODIE",
+          style: GoogleFonts.righteous(
+            textStyle: TextStyle(
+              fontSize: 45.0,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  color: Colors.orange.withOpacity(0.4),
+                  offset: const Offset(4.0, 4.0),
+                  blurRadius: 10,
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      loadingText: const Text(
-        "1.3.3.7",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16.0,
+        loadingText: const Text(
+          "1.3.3.7",
+          style: TextStyle(
+            fontSize: 16.0,
+          ),
         ),
+        showLoader: true,
+        navigator: const FoodieMainLayouts(),
+        backgroundColor: Colors.black,
       ),
-      showLoader: true,
-      navigator: const FoodieMainLayouts(),
-      backgroundColor: Colors.black,
     );
   }
 }

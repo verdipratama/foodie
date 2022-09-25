@@ -51,10 +51,33 @@ class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
           'assets/img/logo_web.png',
           width: 100.0,
         ),
+        leading: const Icon(Icons.format_align_left_sharp),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(5.0),
+            child: Icon(
+              Icons.search,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(5.0),
+            child: Icon(
+              Icons.map_outlined,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(5.0),
+            child: Icon(
+              Icons.shopping_bag_outlined,
+            ),
+          ),
+        ],
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _screens,
+      body: SafeArea(
+        child: IndexedStack(
+          index: _selectedIndex,
+          children: _screens,
+        ),
       ),
       bottomNavigationBar: CustomNavbar(
         selectedIndex: _selectedIndex,
