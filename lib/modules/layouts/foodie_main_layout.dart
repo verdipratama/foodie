@@ -13,14 +13,14 @@ class FoodieMainLayouts extends StatefulWidget {
 }
 
 class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
-  final List<Widget> _screens = const [
+  final List<Widget> screens = const [
     FoodieHomePage(),
     FoodieFavoritePage(),
     FoodieNotificationPage(),
     FoodieProfilePage(),
   ];
 
-  final List _items = [
+  final List items = [
     {
       "icon": const Icon(Icons.home),
       "label": "Home",
@@ -39,6 +39,12 @@ class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
     }
   ];
 
+  final List icon = [
+    Icons.search,
+    Icons.map_outlined,
+    Icons.shopping_bag_outlined,
+  ];
+
   int _selectedIndex = 0;
 
   @override
@@ -52,31 +58,17 @@ class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
           width: 100.0,
         ),
         leading: const Icon(Icons.format_align_left_sharp),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(5.0),
-            child: Icon(
-              Icons.search,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(5.0),
-            child: Icon(
-              Icons.map_outlined,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(5.0),
-            child: Icon(
-              Icons.shopping_bag_outlined,
-            ),
-          ),
-        ],
+        actions: List.generate(icon.length, (index) {
+          return Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Icon(icon[index]),
+          );
+        }),
       ),
       body: SafeArea(
         child: IndexedStack(
           index: _selectedIndex,
-          children: _screens,
+          children: screens,
         ),
       ),
       bottomNavigationBar: CustomNavbar(
@@ -86,7 +78,7 @@ class _FoodieMainLayoutsState extends State<FoodieMainLayouts> {
             _selectedIndex = value;
           });
         },
-        items: _items,
+        items: items,
       ),
     );
   }

@@ -29,91 +29,82 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ],
           ),
-
-          const Expanded(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.only(top: 10, bottom: 10),
-              child: Text(
-                'To address the singleChildScrollView issue, you can wrap that in an Expanded widget and that will solve that problem. Though, you may want to look into using a SliverList for what youre doing if you want the image to be up top and fixed in the app bar.',
-                style: TextStyle(fontSize: 30.0),
-              ),
+          const SizedBox(height: 20.0),
+          const Text(
+            'Categories',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 18.0,
             ),
           ),
-          // const Text(
-          //   'Categories',
-          //   style: TextStyle(
-          //     color: Colors.white,
-          //     fontWeight: FontWeight.bold,
-          //     fontSize: 18.0,
-          //   ),
-          // ),
-          // const SizedBox(height: 20.0),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: const [
-          //     Text(
-          //       'Popular Restaurant Nearby',
-          //       style: TextStyle(
-          //         color: Colors.white,
-          //         fontWeight: FontWeight.bold,
-          //         fontSize: 18.0,
-          //       ),
-          //     ),
-          //     Icon(Icons.keyboard_arrow_right_sharp),
-          //   ],
-          // ),
-          // Container(
-          //   margin: const EdgeInsets.symmetric(vertical: 20.0),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       const Text(
-          //         'New Arrivals',
-          //         style: TextStyle(
-          //           color: Colors.white,
-          //           fontWeight: FontWeight.bold,
-          //           fontSize: 18.0,
-          //         ),
-          //       ),
-          //       Expanded(
-          //         child: Row(
-          //           mainAxisAlignment: MainAxisAlignment.end,
-          //           children: const [
-          //             Text(
-          //               'View All',
-          //               style: TextStyle(
-          //                 fontSize: 14.0,
-          //                 fontWeight: FontWeight.bold,
-          //                 color: Colors.orange,
-          //               ),
-          //             ),
-          //             SizedBox(width: 5.0),
-          //             Icon(Icons.keyboard_arrow_right_sharp),
-          //           ],
-          //         ),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // Row(
-          //   children: [
-          //     Expanded(
-          //       child: Container(
-          //         alignment: Alignment.center,
-          //         height: 60.0,
-          //         color: Colors.red,
-          //         child: const Text(
-          //           'NEW ARIVALS SECTION',
-          //           textAlign: TextAlign.center,
-          //           style: TextStyle(
-          //             fontSize: 20,
-          //             fontWeight: FontWeight.bold,
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          const SizedBox(height: 20.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: const [
+              Text(
+                'Popular Restaurant Nearby',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              Icon(Icons.keyboard_arrow_right_sharp),
+            ],
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'New Arrivals',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                      Text(
+                        'View All',
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange,
+                        ),
+                      ),
+                      SizedBox(width: 5.0),
+                      Icon(Icons.keyboard_arrow_right_sharp),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 60.0,
+                  color: Colors.red,
+                  child: const Text(
+                    'NEW ARIVALS SECTION',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
