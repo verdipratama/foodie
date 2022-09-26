@@ -9,7 +9,6 @@ class FoodieHomePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             children: [
@@ -20,7 +19,6 @@ class FoodieHomePage extends StatelessWidget {
                   color: Colors.red,
                   child: const Text(
                     'BANNER SECTION',
-                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -59,25 +57,6 @@ class FoodieHomePage extends StatelessWidget {
             child: const PageTitle(
               title: 'New Arrivals',
             ),
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 60.0,
-                  color: Colors.red,
-                  child: const Text(
-                    'NEW ARIVALS SECTION',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),

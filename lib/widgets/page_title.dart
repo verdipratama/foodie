@@ -34,7 +34,7 @@ class PageTitle extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: const [
                       Text(
-                        'View All',
+                        'See All',
                         style: TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
