@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/widgets/page_title.dart';
 
 class FoodieHomePage extends StatelessWidget {
   const FoodieHomePage({Key? key}) : super(key: key);
@@ -29,61 +30,34 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20.0),
-          const Text(
-            'Categories',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 18.0,
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20.0),
+            child: const PageTitle(
+              title: 'Categories',
             ),
-          ),
-          const SizedBox(height: 20.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text(
-                'Popular Restaurant Nearby',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
-                ),
-              ),
-              Icon(Icons.keyboard_arrow_right_sharp),
-            ],
           ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'New Arrivals',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.0,
-                  ),
+            child: Column(
+              children: const [
+                PageTitle(
+                  title: 'Popular Restaurant Nearby',
+                  isView: false,
                 ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Text(
-                        'View All',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange,
-                        ),
-                      ),
-                      SizedBox(width: 5.0),
-                      Icon(Icons.keyboard_arrow_right_sharp),
-                    ],
+                SizedBox(height: 15.0),
+                Text(
+                  'The heated or vaporized fluid exits the boiler for use in various processes or heating applications, including water heating, central heating, boiler-based power generation, cooking, and sanitation.',
+                  style: TextStyle(
+                    fontSize: 16.0,
                   ),
                 ),
               ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20.0),
+            child: const PageTitle(
+              title: 'New Arrivals',
             ),
           ),
           Row(
