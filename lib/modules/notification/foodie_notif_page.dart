@@ -7,7 +7,7 @@ class FoodieNotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'Foodie Notification Page',
+        'Coming Soon',
         style: TextStyle(
           fontSize: 22.0,
           fontWeight: FontWeight.bold,
