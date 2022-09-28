@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/utils/styles_helper.dart';
 import 'package:foodie/widgets/page_title.dart';
 
 class FoodieHomePage extends StatelessWidget {
@@ -18,48 +19,13 @@ class FoodieHomePage extends StatelessWidget {
                   const PageTitle(
                     title: 'Categories',
                   ),
-                  const SizedBox(height: 10.0),
+                  Spacers.verticalSpaceSmall(context),
                   SizedBox(
-                    height: 110.0,
+                    height: 120.0,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: List.generate(10, (_) {
-                        return Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Column(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    width: 6.0,
-                                    color: Colors.orange,
-                                  ),
-                                  borderRadius: BorderRadius.circular(20.0),
-                                ),
-                                child: Container(
-                                  width: 60.0,
-                                  height: 60.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    image: const DecorationImage(
-                                      image: AssetImage(
-                                        'assets/img/popular2.png',
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 10.0),
-                                child: Text(
-                                  'Category',
-                                  style: TextStyle(fontSize: 12.0),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
+                        return _buildCategoryItem(context);
                       }),
                     ),
                   ),
@@ -67,16 +33,16 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 5.0),
+              margin: const EdgeInsets.symmetric(vertical: 1.0),
               child: Column(
                 children: [
                   const PageTitle(
                     title: 'Popular Restaurant Nearby',
                     isView: false,
                   ),
-                  const SizedBox(height: 10.0),
+                  Spacers.verticalSpaceSmall(context),
                   Container(
-                    color: Colors.red,
+                    color: const Color(0xFFFF683A),
                     child: Row(
                       children: [
                         SizedBox(
@@ -87,7 +53,7 @@ class FoodieHomePage extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 10.0),
+                        Spacers.horizontalSpaceLarge(context),
                         Column(
                           children: const [
                             Text('title'),
@@ -107,27 +73,52 @@ class FoodieHomePage extends StatelessWidget {
                 title: 'New Arrivals',
               ),
             ),
-            // Row(
-            //   children: [
-            //     Expanded(
-            //       child: Container(
-            //         height: 60.0,
-            //         color: Colors.red,
-            //         child: const Center(
-            //           child: Text(
-            //             'BANNER SECTION',
-            //             style: TextStyle(
-            //               fontSize: 20,
-            //               fontWeight: FontWeight.bold,
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
           ],
         ),
+      ),
+    );
+  }
+
+  Padding _buildCategoryItem(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 6.0,
+                color: const Color(0xFFFF683A),
+              ),
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            child: Container(
+              width: 60.0,
+              height: 60.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
+                image: const DecorationImage(
+                  image: AssetImage(
+                    'assets/img/popular1.png',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+          // const SizedBox(height: 6.0),
+          Spacers.verticalSpaceTiny(context),
+          const SizedBox(
+            width: 60.0,
+            child: Text(
+              'Category',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12.0),
+            ),
+          ),
+        ],
       ),
     );
   }
