@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/utils/styles_helper.dart';
 
 class PageTitle extends StatelessWidget {
   const PageTitle({
@@ -32,8 +33,8 @@ class PageTitle extends StatelessWidget {
               ? Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'See All',
                         style: TextStyle(
                           fontSize: 14.0,
@@ -41,8 +42,8 @@ class PageTitle extends StatelessWidget {
                           color: Colors.orange,
                         ),
                       ),
-                      SizedBox(width: 5.0),
-                      Icon(Icons.keyboard_arrow_right_sharp),
+                      Spacers.horizontalSpaceTiny(context),
+                      const Icon(Icons.keyboard_arrow_right_sharp),
                     ],
                   ),
                 )
