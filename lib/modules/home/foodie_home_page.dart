@@ -106,7 +106,6 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ),
           ),
-          // const SizedBox(height: 6.0),
           Spacers.verticalSpaceTiny(context),
           const SizedBox(
             width: 60.0,
