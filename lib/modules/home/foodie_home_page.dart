@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:foodie/utils/styles_helper.dart';
 import 'package:foodie/widgets/page_title.dart';
@@ -9,11 +10,33 @@ class FoodieHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
+            CarouselSlider(
+              items: [
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10.0),
+                    child: Image.asset(
+                      'assets/img/trending8.png',
+                      fit: BoxFit.cover,
+                      height: double.infinity,
+                      width: double.maxFinite,
+                    ),
+                  ),
+                ),
+              ],
+              options: CarouselOptions(
+                viewportFraction: 0.8,
+                autoPlay: true,
+                aspectRatio: 2.2,
+              ),
+            ),
+            Spacers.verticalSpaceMedium(context),
             Container(
-              margin: const EdgeInsets.only(bottom: 5.0),
+              margin: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 children: [
                   const PageTitle(
@@ -33,14 +56,17 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 1.0),
+              margin: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 5.0,
+              ),
               child: Column(
                 children: [
                   const PageTitle(
                     title: 'Popular Restaurant Nearby',
                     isView: false,
                   ),
-                  Spacers.verticalSpaceSmall(context),
+                  Spacers.verticalSpaceMedium(context),
                   Container(
                     color: const Color(0xFFFF683A),
                     child: Row(
@@ -68,7 +94,10 @@ class FoodieHomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 10.0),
+              margin: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 10.0,
+              ),
               child: const PageTitle(
                 title: 'New Arrivals',
               ),
@@ -99,7 +128,7 @@ class FoodieHomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
                 image: const DecorationImage(
                   image: AssetImage(
-                    'assets/img/popular1.png',
+                    'assets/img/popular2.png',
                   ),
                   fit: BoxFit.cover,
                 ),
